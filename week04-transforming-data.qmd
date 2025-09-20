@@ -141,14 +141,23 @@ Bonus: If you assign this to a new object name, you can then use `view(object_na
 
 ```{r, message=FALSE}
 
+average_flipper_length <- penguins %>%
+  group_by(species) %>%
+  summarise(average_flipper_length = mean(flipper_length_mm, na.rm = TRUE))
 
+View(average_flipper_length)
 ```
 
 In the code chunk below, plot `average_flipper_length` using `ggplot()` and `geom_bar`. Customize the graph with colors, a theme, and labels, etc., as you wish.
 
 ```{r, message=FALSE}
 
-
+ggplot(data = average_flipper_length, aes (x = species, y = average_flipper_length, fill = species)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  coord_flip() +
+  theme(legend.position = "none") +
+  labs(title = "TITLE", subtitle = "subtitle", x = "flipper_length", y = "species")
 ```
 
 ## Exercise 2
@@ -159,7 +168,10 @@ Create a boxplot of body mass by species & make the plot interactive
 
 ```{r, message=FALSE}
 
+ex2 <- ggplot(data = penguins_data, aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot()
 
+ggplotly(ex2)
 ```
 
 ## Exercise 3
@@ -170,7 +182,12 @@ How many penguins live on each Island?
 
 ```{r, message=FALSE}
 
+summary(as.factor(penguins_data$island))
 
+table(penguins_data$island)
+
+penguins_data %>%
+  count(island)
 ```
 
 ## Exercise 4
@@ -179,7 +196,18 @@ Create a dataframe that has the average culmen depth for each species. Then, mak
 
 ```{r, message=FALSE}
 
+average_culmen_depth <- penguins_data %>%
+  group_by(species) %>%
+  summarize(average_culmen_depth = mean(culmen_depth_mm, na.rm = TRUE))
 
+# View(average_culmen_depth)
+
+ggplot(data = average_culmen_depth, aes (x = species, y = average_culmen_depth, fill = species)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  coord_flip() +
+  theme(legend.position = "none") +
+  labs(title = "Depth of Culmen", subtitle = "average of culmen_depth_mm", x = "flipper_length", y = "species")
 ```
 
 ## Push to GitHub!

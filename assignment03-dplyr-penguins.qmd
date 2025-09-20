@@ -49,16 +49,24 @@ Estimated time commitment: 90 minutes
 
 ## 3. `filter()`
 
-Use `filter()` to create a subset from `penguins` that only contains female penguins with a culmen length (bill length) greater than or equal to 39 millimeters, and only those that live on Dream or Torgerson islands.
+Use `filter()` to create a subset from `penguins` that only contains female penguins with a culmen length (bill length) greater than or equal to 39 millimeters, and only those that live on Dream or Torgersen islands.
 
 Don't forget to assign to a new object name. (I'm just going to call mine `filter`)
 
 Hints: You can always check your work using `unique()`. It'll tell you the unique values that exist in a specified column, and will also help you identify the correct spelling
 
 ```{r, messages=FALSE}
-unique(penguins$species) # an example of how to use unique()
+unique(penguins_data$island) # an example of how to use unique()
 
+fem_peng_mm <- penguins_data %>%
+  filter(sex == "FEMALE", culmen_length_mm >= 39.0, island %in% c("Dream", "Torgersen"))
 
+fem_peng_mm_larch <- penguins_data %>%
+  filter(sex == "FEMALE", culmen_length_mm >= 39.0, island == "Dream" | island == "Torgersen")
+
+View(fem_peng_mm)
+
+unique(fem_peng_mm$island)
 ```
 
 ## 4. `select()`
@@ -69,7 +77,10 @@ Assign this to a new object name so that you do not overwrite the original data!
 
 ```{r, message=FALSE, warning=FALSE}
 
+select_df <- penguins_data %>%
+  select(-comments)
 
+View(select_df)
 ```
 
 ## 5. `relocate()`
@@ -80,7 +91,10 @@ Don't forget to assign to a new object name!
 
 ```{r, message=FALSE, warning=FALSE}
 
+relocate_df <- penguins_data %>%
+  relocate(individual_id, .after = sample_number)
 
+View(relocate_df)
 ```
 
 ## 6. `rename()`
@@ -91,7 +105,10 @@ Don't forget to assign to a new object name.
 
 ```{r, message=FALSE, warning=FALSE}
 
+rename_df <- penguins_data %>%
+  rename(island_name = island)
 
+View(penguins_data)
 ```
 
 ## 7. `mutate()`
@@ -100,7 +117,10 @@ Copy `penguins` to a new object called `mutate` and add a column that displays f
 
 ```{r, message=FALSE, warning=FALSE}
 
+mutate_df <- penguins_data %>%
+  mutate(flippometers = flipper_length_mm / 1e-6)
 
+View(mutate_df)
 ```
 
 ## 8. `group_by() %>% summarize()`
@@ -113,7 +133,12 @@ Apply `na.rm` as needed.
 
 ```{r, message=FALSE, warning=FALSE}
 
+number8 <- penguins_data %>%
+  group_by(island, species) %>%
+  summarize(culmen_depth_mean = mean(culmen_depth_mm, na.rm = TRUE),
+            culmen_length_mean = mean(culmen_length_mm, na.rm = TRUE))
 
+View(number8)
 ```
 
 ## 9. `across()`
@@ -122,7 +147,11 @@ Starting with `penguins`, only keep observations for Biscoe island, group by `sp
 
 ```{r, message=FALSE, warning=FALSE}
 
+across_df <- penguins_data %>%
+  group_by(island = "Biscoe", species) %>%
+  summarize(across(is.numeric, max, na.rm = TRUE))
 
+View(across_df)
 ```
 
 ## 10. `count()`
@@ -131,7 +160,11 @@ Starting with `penguins`, create a new object called `count` that filters out al
 
 ```{r, message=FALSE, warning=FALSE}
 
+count <- penguins_data %>%
+  filter(sex == "MALE" | sex == "FEMALE") %>%
+  count(island, species, sex)
 
+View(count)
 ```
 
 ## 11. `case_when()`
@@ -146,7 +179,13 @@ Use `summary(as.factor(case_when$size))` to check your work
 
 ```{r, message=FALSE, warning=FALSE}
 
+case_when <- penguins_data %>%
+  mutate(size = case_when(
+    body_mass_g >= 4050 ~ "big",
+    body_mass_g < 4050 ~ "small"
+  ))
 
+View(case_when)
 ```
 
 ## 12. Final Boss 🐧 (up to 2.5 pts extra credit)
@@ -161,7 +200,7 @@ Create a new object called `final_boss` that satisfies all of the following:
 
 1.  Start with the `penguins` dataset.
 
-2.  Filter to keep only *female* penguins with a known `flipper_length_mm` (not `NA`) that are either on Dream or Biscoeisland.
+2.  Filter to keep only *female* penguins with a known `flipper_length_mm` (not `NA`) that are either on Dream or Biscoe island.
 
 3.  Select just these columns: `species`, `island`, `flipper_length_mm`, and `body_mass_g`.
 
@@ -189,7 +228,20 @@ Create a new object called `final_boss` that satisfies all of the following:
 
 ```{r, message=FALSE, warning=FALSE}
 
+final_boss <- penguins_data %>%
+  filter(sex == "FEMALE", 
+         !is.na(flipper_length_mm),
+         island %in% c("Dream", "Biscoe")) %>%
+  select(species, island, flipper_length_mm, body_mass_g) %>%
+  mutate(flipper_rank = case_when(
+    flipper_length_mm < 190 ~ "short",
+    flipper_length_mm >= 190 | flipper_length_mm <= 210 ~ "medium",
+    flipper_length_mm > 210 ~ "long"
+    )) %>%
+  group_by(species, island, flipper_rank) %>%
+  summarize(avg_mass_g = mean(body_mass_g, na.rm = TRUE))
 
+View(final_boss)
 ```
 
 # Push to GitHub AND submit link on Canvas!!
