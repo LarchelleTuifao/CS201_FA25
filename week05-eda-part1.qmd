@@ -94,15 +94,19 @@ pokedata$name <- as.factor(pokedata$name)
 pokedata$type_2 <- as.factor(pokedata$type_2)
 pokedata$generation <- as.factor(pokedata$generation)
 
+skim_data <- skimr::skim(pokedata)
+view(skim_data)
+
+summary(pokedata$legendary)
 
 # here, i went ahead and converted the other variables to factor where it applies. this can be done ay anytime. you can also convert back later at any point, if you need
 ```
 
-How many categorical variables are there?
+How many categorical variables are there? 6
 
-How many numeric variables are there?
+How many numeric variables are there? 7
 
-How many legendary?
+How many legendary? 65
 
 ## Variation and Covariation
 
@@ -114,7 +118,7 @@ Let's start by looking at the distribution of Pokemon by Special Attack (`sp_atk
 
 ```{r, message=FALSE}
 ggplot(pokedata, aes(x = sp_atk)) +
-  geom_histogram(binwidth = 1)
+  geom_histogram(binwidth = 10)
 ```
 
 **Question!** What is the difference between a histogram and a bar chart?\
@@ -143,7 +147,7 @@ Use code that you've already seen elsewhere to focus on certain "regions" of int
 
 ```{r}
 pokedata_0_100 <- pokedata |> # check it out! the new "pipe" (%>% still works, and they essentially work the same)
-  filter(sp_atk < 100)
+  filter(sp_atk <= 100)
 
 ggplot(pokedata_0_100, aes(x = sp_atk)) +
   geom_histogram(binwidth = 1) +
@@ -199,17 +203,28 @@ One for `sp_atk`:
 
 ```{r, message=FALSE}
 
+sp_atk_boxplot <- ggplot(pokedata, aes(x = sp_atk,  fill = generation)) +
+  geom_boxplot() +
+  facet_wrap(~generation)
+
+sp_atk_boxplot
 ```
 
 Another for `sp_def`:
 
 ```{r, message=FALSE}
 
+sp_def_boxplot <- ggplot(pokedata, aes(x = sp_def, fill = generation)) +
+  geom_boxplot() + 
+  facet_wrap(~generation)
+
+sp_def_boxplot
 ```
 
 ### Question for next class:
 
 -   How do you read a boxplot, and what are the different landmarks?
+    -   
 
 ## Extra Credit!
 
