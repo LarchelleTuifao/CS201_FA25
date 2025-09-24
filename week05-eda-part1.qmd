@@ -223,8 +223,9 @@ sp_def_boxplot
 
 ### Question for next class:
 
--   How do you read a boxplot, and what are the different landmarks?
-    -   
+-   
+
+    ## How do you read a boxplot, and what are the different landmarks?
 
 ## Extra Credit!
 
