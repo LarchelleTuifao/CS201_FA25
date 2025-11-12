@@ -1,0 +1,111 @@
+---
+title: "Assignment 9: Class Wrap-up"
+format: html
+editor: visual
+author: "Amber Camp"
+date: "`r Sys.Date()`"
+---
+
+## Assignment 9: Class Wrap-up
+
+We are finally at the end of the semester! The final assignment for the class will be to summarize and share some of the things we've done so far.
+
+The plan is for everyone to be randomly paired with a tiny topic pertaining to something we've learned together this semester and then submit a code snippet to be presented in class on Wednesday, 11/12. (Think \~2 minute walkthrough)
+
+### Instructions
+
+1.  Find your assigned topic. Talk to me if you reeeeeeaaaally want to do something else, or trade with someone (but let me know).
+
+2.  Prepare a code snippet that briefly (\~2) explains the topic in the code chunk below, using `penguins` data.
+
+3.  Push to GitHub **BY 10:00am** on Wednesday 11/10 (I'll need time to compile before class).
+
+4.  Come to class Wednesday and show us how it's done :)
+
+### *WILDCARD!* Pivot - Long and Wide
+
+#### Libraries
+
+```{r, message=FALSE}
+library(tidyverse)
+library(scales)
+library(janitor)
+```
+
+#### Read in the dataset
+
+```{r, message=FALSE}
+salary_subset <- read_csv("data/salary_subset.csv")
+```
+
+#### Ensure columns *annual_salary* and *bonus* are numeric
+
+```{r, message=FALSE}
+
+salary_subset <- salary_subset %>%
+  mutate(
+    annual_salary = if (is.numeric(annual_salary)) annual_salary else parse_number(annual_salary),
+    bonus = if (is.numeric(bonus)) bonus else parse_number(bonus)
+  ) %>%
+  filter(!is.na(annual_salary))
+```
+
+#### Pivot Longer Example
+
+```{r, message=FALSE}
+
+data_long <- salary_subset %>%
+  pivot_longer(
+    cols = c(annual_salary, bonus),
+    names_to = "comp_type",
+    values_to = "amount"
+  )
+
+view(data_long)
+```
+
+#### Pivot Wider Example
+
+```{r, message=FALSE}
+
+industry_summary <- data_long %>%
+  group_by(industry, comp_type) %>%
+  summarize(avg_amount = mean(amount, na.rm = TRUE), .groups = "drop") %>%
+  pivot_wider(
+    names_from = comp_type,
+    values_from = avg_amount
+  )
+
+view(industry_summary)
+```
+
+```{r, message=FALSE, warning=FALSE}
+
+# VIS FOR PIVOT_LONGER: compare salary vs bonus by industry
+ggplot(data_long, aes(x = reorder(industry, amount), y = amount, fill = comp_type)) +
+  geom_col(position = "dodge") +
+  coord_flip() +
+  scale_y_continuous(labels = dollar_format()) +
+  labs(
+    title = "Salary vs Bonus by Industry (Long Format)",
+    x = "Industry",
+    y = "Amount",
+    fill = "Compensation Type"
+  ) +
+  theme_minimal()
+
+# VIS FOR PIVOT_WIDER: average salary and bonus by industry
+ggplot(industry_summary, aes(x = reorder(industry, annual_salary))) +
+  geom_col(aes(y = annual_salary, fill = "Salary")) +
+  geom_col(aes(y = bonus, fill = "Bonus"), alpha = 0.7) +
+  coord_flip() +
+  scale_y_continuous(labels = dollar_format()) +
+  scale_fill_manual(values = c("Salary" = "steelblue", "Bonus" = "skyblue")) +
+  labs(
+    title = "Average Salary and Bonus by Industry (Wide Format)",
+    x = "Industry",
+    y = "Amount",
+    fill = "Compensation Type"
+  ) +
+  theme_minimal()
+```
