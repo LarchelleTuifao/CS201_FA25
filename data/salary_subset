@@ -1,0 +1,101 @@
+industry,job_title,annual_salary,bonus,currency,country,experience_years,education
+Computing or Tech,Senior Software Engineering Manager,170000,3000,USD,United States,8 - 10 years,College degree
+Construction,HR generalist,79040,NA,USD,Us,21 - 30 years,Some college
+Recruitment or HR,Associate Director HR,95000,0,USD,USA,11 - 20 years,College degree
+Nonprofits,Bilingual Programs Coordinator,38480,0,USD,United States of America,2 - 4 years,College degree
+Nonprofits,Clinical supervisor,75000,NA,CAD,Canada,8 - 10 years,Master's degree
+Computing or Tech,Software Engineering Manager,202000,300000,USD,United States,8 - 10 years,Master's degree
+Nonprofits,Events Manager,43500,NA,USD,U.S.,5-7 years,College degree
+Nonprofits,Administrative Assistant,43680,NA,USD,USA,5-7 years,College degree
+Government and Public Administration,Special Event Coordinator,48000,0,USD,United States,8 - 10 years,College degree
+Computing or Tech,"Senior Director, Data Engineering",220000,0,USD,U.S.,11 - 20 years,Master's degree
+Engineering or Manufacturing,It Manager,100000,20000,USD,United States,11 - 20 years,College degree
+Computing or Tech,Senior Manager,156500,90000,USD,US,8 - 10 years,College degree
+Education (Higher Education),Administratie assistant/associate,35000,0,USD,USA,21 - 30 years,College degree
+Computing or Tech,Senior Copywriter,89000,17000,USD,U.S.,11 - 20 years,Master's degree
+Engineering or Manufacturing,Data analyst,49200,2000,EUR,Finland,5-7 years,Master's degree
+Engineering or Manufacturing,R&D Engineer,60000,0,EUR,Netherlands,5-7 years,PhD
+Media & Digital,Engagement Editor,58000,0,USD,United States,5-7 years,College degree
+Computing or Tech,Product Manager,72500,0,GBP,UK,5-7 years,College degree
+Library,Administrative Librarian,78000,0,USD,us,21 - 30 years,PhD
+Computing or Tech,Software engineer,171000,NA,USD,US,5-7 years,College degree
+Retail,Team Leader,36000,NA,USD,USA,11 - 20 years,Some college
+Education (Higher Education),Assistant Director of Finance,79000,0,GBP,UK,21 - 30 years,Master's degree
+Computing or Tech,Site Reliability Engineer,180000,450000,EUR,Ireland,21 - 30 years,High School
+Nonprofits,Head of Finance,54511,0,GBP,UK,8 - 10 years,Master's degree
+Government and Public Administration,Program Specialist,52000,0,USD,US,11 - 20 years,Master's degree
+Media & Digital,Senior Editor,40000,NA,USD,USA,11 - 20 years,College degree
+Media & Digital,Principal Researcher,110000,10000,USD,United States,11 - 20 years,Master's degree
+Social Work,Director,70000,500,USD,United States,21 - 30 years,High School
+Engineering or Manufacturing,Senior Engineer,130000,NA,USD,USA,11 - 20 years,Master's degree
+Retail,Store Operations Assistant,18500,500,GBP,UK,8 - 10 years,College degree
+Business or Consulting,HR Manager,115000,20000,USD,United States,11 - 20 years,College degree
+Nonprofits,Manager (Fundraising),62500,0,USD,USA,11 - 20 years,College degree
+Government and Public Administration,Public Services Supervisor,42000,0,USD,United States,8 - 10 years,Master's degree
+Law,Associate Lawyer,130000,15000,CAD,Canada,5-7 years,"Professional degree (MD, JD, etc.)"
+Real Estate Association,Social Media Coordinator,47000,NA,USD,USA,5-7 years,College degree
+Recruitment or HR,HR Business Partner,80000,NA,USD,USA,5-7 years,Master's degree
+Health care,Project Manager II,86000,0,USD,United States,11 - 20 years,College degree
+Government and Public Administration,EOS,95000,2000,USD,USA,11 - 20 years,Master's degree
+Computing or Tech,Technical Services Engineer,120000,2000,USD,United States of America,5-7 years,College degree
+Engineering or Manufacturing,Function developer,85000,3000,EUR,Germany,8 - 10 years,PhD
+Government and Public Administration,Air Traffic Control Specialist,105000,0,USD,United States of America,5-7 years,College degree
+Nonprofits,Executive Director,74651,0,USD,USA,5-7 years,PhD
+Nonprofits,Adoptions Client Care Supervisor,50419,NA,USD,USA,8 - 10 years,College degree
+Art & Design,Graphic Designer,74000,7000,USD,United States,11 - 20 years,College degree
+Education (Higher Education),Multimedia Specialist,38000,NA,USD,United States,8 - 10 years,College degree
+Internet,CRM Manager,145000,20000,AUD/NZD,Australia,11 - 20 years,Master's degree
+Engineering or Manufacturing,Human Resources Manager,94000,6000,USD,USA,21 - 30 years,Master's degree
+Engineering or Manufacturing,Application Specialist,52500,55000,CAD,Canada,21 - 30 years,College degree
+Computing or Tech,senior technical professional,110000,2000,USD,USA,5-7 years,College degree
+"Marketing, Advertising & PR",Manager,30238,1200,Other,Brazil,11 - 20 years,College degree
+Computing or Tech,Business Operations Manager,120000,1,USD,United States,8 - 10 years,Master's degree
+Public Library,Library Director,57000,0,USD,United States,11 - 20 years,Master's degree
+Computing or Tech,Program Manager,157000,0,USD,USA,21 - 30 years,College degree
+Computing or Tech,Development manager,190000,70000,USD,USA,11 - 20 years,Some college
+Computing or Tech,Software Engineer,255000,290000,USD,US,11 - 20 years,Master's degree
+Property or Construction,Facilities Coordinator,71400,2000,USD,United States,11 - 20 years,NA
+Engineering or Manufacturing,Engineering project manager,115000,7000,USD,US,8 - 10 years,College degree
+Education (Higher Education),Program Assistant 3,45000,0,USD,USA,11 - 20 years,College degree
+Computing or Tech,Web Developer,75000,0,USD,United States,5-7 years,College degree
+Computing or Tech,Senior Product Marketing Manager,165000,25000,USD,U.S.,5-7 years,"Professional degree (MD, JD, etc.)"
+Business or Consulting,Director of Business Development,140000,60000,CAD,Canada,21 - 30 years,College degree
+Utilities & Telecommunications,Policy Analyst,57000,1100,USD,US,2 - 4 years,College degree
+Public Libraries,Director,62000,0,USD,USA,11 - 20 years,Master's degree
+Transport or Logistics,Logistics Coordinator,54370,10000,USD,United States,21 - 30 years,Some college
+Print / Mail,Programmer,87000,500,USD,United States,11 - 20 years,College degree
+Health care,Administrative Assistant,58000,350,USD,USA,11 - 20 years,College degree
+Computing or Tech,Director of Product Management,198000,NA,USD,United States,8 - 10 years,College degree
+Education (Higher Education),Head of Digital Library,85000,NA,USD,United States,11 - 20 years,Master's degree
+"Marketing, Advertising & PR",Senior Account Manager,133510,50000,USD,United States,8 - 10 years,College degree
+"Accounting, Banking & Finance",Cluster Manager - Marketing,1465000,387000,Other,India,11 - 20 years,College degree
+Engineering or Manufacturing,DOT Compliance Specialist,79490,8000,USD,United States,5-7 years,College degree
+Nonprofits,Director of Training,60000,1100,USD,United States,11 - 20 years,Master's degree
+Health care,Senior Financial Analyst- Mergers & Acquisitions,110000,16500,USD,U.S.A.,11 - 20 years,College degree
+Education (Primary/Secondary),Office Manager,51000,NA,USD,USA,11 - 20 years,College degree
+Law Enforcement & Security,Casino Security Officer,26325,NA,USD,US,2 - 4 years,Some college
+Computing or Tech,"Director, product management",240000,170000,USD,United States,11 - 20 years,College degree
+Agriculture or Forestry,product development manager,87500,NA,EUR,Belgium,11 - 20 years,PhD
+"Accounting, Banking & Finance",Senior Investment Operations Analyst,105000,25000,USD,United States,11 - 20 years,College degree
+Computing or Tech,Research Associate II,90000,NA,USD,Unite States,2 - 4 years,College degree
+Government and Public Administration,Assistant Project Engineer,100572,NA,USD,United States,11 - 20 years,Master's degree
+Health care,"senior manager, scientific affairs",160000,24000,USD,united states,21 - 30 years,Master's degree
+Media & Digital,User Experience Designer Apprentice,22220,NA,GBP,UK,2 - 4 years,Some college
+Computing or Tech,Senior Software Engineer 1,115000,5000,USD,USA,2 - 4 years,College degree
+Government and Public Administration,IT Director,142000,0,CAD,Canada,31 - 40 years,Master's degree
+Computing or Tech,Technical Program Manager,151000,21000,USD,USA,11 - 20 years,Master's degree
+Utilities & Telecommunications,Brand and Digital Specialist,85000,5000,CAD,Canada,11 - 20 years,College degree
+Health care,Clinical Research Nurse,102000,0,USD,USA,11 - 20 years,College degree
+Law,Senior Associate,103000,1000,USD,USA,8 - 10 years,"Professional degree (MD, JD, etc.)"
+Entertainment,Senior DevOps Engineer,70000,NA,GBP,England,11 - 20 years,College degree
+Government and Public Administration,Library Director,113500,NA,USD,USA,11 - 20 years,Master's degree
+Engineering or Manufacturing,Office Manager,60000,2500,USD,United States,11 - 20 years,College degree
+Computing or Tech,COBRA Integration Analyst,45760,1500,USD,United States,1 year or less,College degree
+"Accounting, Banking & Finance",Controller,120000,20000,USD,USA,11 - 20 years,College degree
+Computing or Tech,Frontend web developer,55000,NA,CAD,Canada,8 - 10 years,NA
+"Accounting, Banking & Finance",senior credit analyst,72000,8000,USD,united states,2 - 4 years,College degree
+Health care,Accessibility lead,147000,6000,USD,United States,11 - 20 years,College degree
+"Accounting, Banking & Finance",Assistant controller,75000,0,USD,USA,8 - 10 years,Some college
+Nonprofits,Supervisory Archivist,71000,0,USD,US,11 - 20 years,Master's degree
+Health care,Paramedic,68000,NA,USD,United States,11 - 20 years,Some college
+Health care,research scientist,113000,3000,USD,US,5-7 years,PhD
